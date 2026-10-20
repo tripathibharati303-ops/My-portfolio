@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bharati Tripathi — B.Tech CSE Student · Web &amp; Data</title>
+  <meta name="description"
+    content="Portfolio of Bharati Tripathi, B.Tech Computer Science student at JUET Rewa — web development, data analysis and problem solving.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0A0A0D">
+  <meta property="og:title" content="Bharati Tripathi — Portfolio">
+  <meta property="og:description" content="B.Tech CSE student · web, data analysis and problem solving.">
+  <meta property="og:type" content="website">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0D'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='14' font-weight='700' fill='%2337E8D0' text-anchor='middle'%3EBT%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    /* apply saved / OS theme before first paint so there is no flash */
+    (function () { try { var s = localStorage.getItem('bt-theme'); var m = s || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.setAttribute('data-theme', m); var t = document.querySelector('meta[name="theme-color"]'); if (t) t.setAttribute('content', m === 'light' ? '#F6F7FB' : '#07070B'); } catch (e) { } })();
+  </script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- pointer extras (JS switches them on only when supported) -->
+  <div id="cursor-ring" aria-hidden="true"></div>
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="spotlight" aria-hidden="true"></div>
+  <canvas id="fx" role="presentation" aria-hidden="true"></canvas>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div id="progress" aria-hidden="true"></div>
+
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <a class="logo" href="#top">BT<sup>°</sup><span class="logo-sub">bharati.tripathi</span></a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <span class="live" title="Local time in Rewa / IST"><span class="dot"></span>Open to work · <span
+            id="clock">--:--</span> IST</span>
+        <button class="icon-btn" id="themeToggle" aria-label="Switch to light theme" aria-pressed="false">
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" />
+            <path
+              d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7" />
+          </svg>
+        </button>
+        <a class="btn btn-fill btn-sm" href="#contact">Hire Me</a>
+        <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false"
+          aria-controls="navLinks">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+
+      <!-- ================= HERO ================= -->
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <div class="badge reveal"><span class="pulse"></span> Open to internships &amp; collaborations</div>
+
+          <h1 class="reveal">Hi, I'm <span class="grad">Bharati&nbsp;Tripathi</span></h1>
+
+          <p class="role-line reveal">I'm a <span class="grad" id="typewriter">CSAIML Student</span><span
+              class="cursor-bar" aria-hidden="true"></span></p>
+
+          <p class="desc reveal">A B.Tech Computer Science student who turns data and real-world problems into
+            clean, working solutions on the web — <em>still learning, always improving.</em></p>
+
+          <div class="btn-row reveal">
+            <a href="#projects" class="btn btn-fill">See My Work
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg></a>
+            <a href="#contact" class="btn btn-outline">Get in Touch</a>
+          </div>
+
+          <div class="socials reveal" aria-label="Profiles">
+            <a class="s-link" href="https://github.com/tripathibharati303-ops" target="_blank" rel="noopener noreferrer"
+              aria-label="GitHub profile">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
+              </svg>
+            </a>
+            <a class="s-link" href="https://www.linkedin.com/in/bharati-tripathi-a8a2a6375" target="_blank"
+              rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                <path
+                  d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+              </svg>
+            </a>
+            <a class="s-link" href="https://leetcode.com/TripathiBharati" target="_blank" rel="noopener noreferrer"
+              aria-label="LeetCode profile">
+              <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                <path
+                  d="M13.48 22c-1.3 0-2.53-.5-3.44-1.42l-3.83-3.86A4.86 4.86 0 0 1 5 13.3c0-1.3.5-2.53 1.42-3.44l4.66-4.66a1.38 1.38 0 0 1 1.95 1.95L8.37 11.8a2.1 2.1 0 0 0 0 2.97l3.83 3.86a2.1 2.1 0 0 0 2.97 0l2.66-2.66a1.38 1.38 0 0 1 1.95 1.95l-2.66 2.66A4.86 4.86 0 0 1 13.48 22zm-1.7-7.75a1.38 1.38 0 0 1 0-1.95l4.7-4.7a1.38 1.38 0 1 1 1.95 1.95l-4.7 4.7a1.38 1.38 0 0 1-1.95 0zM9.9 3.42a1.38 1.38 0 0 1 1.95 0l1.28 1.28a1.38 1.38 0 1 1-1.95 1.95L9.9 5.37a1.38 1.38 0 0 1 0-1.95z" />
+              </svg>
+            </a>
+            <a class="s-link" href="/cdn-cgi/l/email-protection#97f5fff6e5f6e3fee3e5fee7f6e3ffa7a2d7f0faf6fefbb9f4f8fa"
+              aria-label="Send an email">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="stats-row reveal">
+            <div class="stat-card">
+              <div class="num"><span class="count" data-to="5">5</span>+</div>
+              <div class="label">Languages</div>
+            </div>
+            <div class="stat-card">
+              <div class="num"><span class="count" data-to="8">8</span>+</div>
+              <div class="label">Core Skills</div>
+            </div>
+            <div class="stat-card">
+              <div class="num"><span class="count" data-to="5">5</span></div>
+              <div class="label">GitHub Projects</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- hero visual: dot-art monogram + live code card -->
+        <div class="hero-visual reveal">
+          <div class="visual-frame frame-3d" id="heroFrame">
+            <!-- <canvas id="blobCanvas" class="blob" width="360" height="360" role="img" aria-label="Decorative dot-art circle"></canvas> -->
+            <div class="cube-stage" id="cubeStage" tabindex="0" role="group"
+              aria-label="3D cube of marks. Drag it, or focus it and use the arrow keys, to rotate.">
+              <div class="cube" id="cube">
+                <div class="face f-front"><span class="mono">BT</span></div>
+                <div class="face f-back"><span>&lt;/&gt;</span></div>
+                <div class="face f-right"><span>{ }</span></div>
+                <div class="face f-left"><span>SQL</span></div>
+                <div class="face f-top"><span>C++</span></div>
+                <div class="face f-bottom"><span>π</span></div>
+              </div>
+              <span class="cube-floor"></span>
+            </div>
+            <span class="chip chip-1">C++</span>
+            <span class="chip chip-2">Python</span>
+            <span class="chip chip-3">JavaScript</span>
+            <span class="chip chip-4">Database System</span>
+          </div>
+          <figure class="code-card">
+            <figcaption class="cc-bar"><i></i><i></i><i></i><span>about.json</span></figcaption>
+            <pre><code>{
+  <span class="k">"name"</span>: <span class="s">"Bharati Tripathi"</span>,
+  <span class="k">"degree"</span>: <span class="s">"B.Tech CSAIML · JUET, Rewa"</span>,
+  <span class="k">"stack"</span>: [<span class="s">"C"</span>, <span class="s">"C++"</span>, <span class="s">"Python"</span>, <span class="s">"JS"</span> , <span class="s">"My Sql"</span>],
+  <span class="k">"focus"</span>: <span class="s">"DSA + web"</span>,
+  <span class="k">"open_to"</span>: <span class="s">"Internships"</span>,
+  <span class="k">"status"</span>: <span class="b">"always learning and Improving."</span>
+}</code></pre>
+          </figure>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Problem Solving</span><span>·</span><span>Data Analysis</span><span>·</span><span>Web
+          Design</span><span>·</span>
+        <span>DSA</span><span>·</span><span>DBMS</span><span>·</span><span>System
+          Design</span><span>·</span><span>Foundations of AI</span><span>·</span>
+        <span>Problem Solving</span><span>·</span><span>Data Analysis</span><span>·</span><span>Web
+          Design</span><span>·</span>
+        <span>DSA</span><span>·</span><span>DBMS</span><span>·</span><span>System
+          Design</span><span>·</span><span>Foundations of AI</span><span>·</span>
+      </div>
+    </div>
+
+    <div class="wrap">
+
+      <!-- ================= ABOUT ================= -->
+      <section class="about" id="about">
+        <div class="about-copy">
+          <p class="eyebrow reveal">01 — About me</p>
+          <h2 class="reveal">WHO IS <span class="grad">BHARATI</span></h2>
+          <br>
+          <p class="reveal">I'm a B.Tech Computer Science and SPECIALIZATION Artificial Intelligence & Machine Learning
+            student at <strong>Jaypee University of Engineering
+              and Technology</strong>, from Rewa, Madhya Pradesh. I completed my schooling in Rewa with 88% in Class X
+            and
+            85% in Class XII.</p>
+          <p class="reveal">I enjoy exploring <strong>My SQL Knowledge</strong> <strong>data analysis</strong> and
+            <strong>problem-solving</strong>, and
+            building clean, usable web pages along the way.</p>
+
+          <ul class="fact-list reveal">
+            <li><span>Based in</span><b>Rewa, MP · India</b></li>
+            <li><span>Studying</span><b>B.Tech CSALML, JUET</b></li>
+            <li><span>Looking for</span><b>Internships &amp; team projects</b></li>
+          </ul>
+
+          <div class="mini-stats reveal">
+            <div class="stat-card">
+              <div class="num">88%</div>
+              <div class="label">Class X</div>
+            </div>
+            <div class="stat-card">
+              <div class="num">85%</div>
+              <div class="label">Class XII</div>
+            </div>
+            <div class="stat-card">
+              <div class="num">2</div>
+              <div class="label">Clubs</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="side-col reveal">
+          <div class="monogram"><span>BT</span><i class="ring"></i></div>
+          <div class="quote-card">
+            <p>“First, solve the problem. Then, write the code.”</p>
+            <span>— John Johnson</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SKILLS + GRAPH ================= -->
+      <section class="skills" id="skills">
+        <p class="eyebrow reveal">02 — Skills</p>
+        <h2 class="reveal">WHAT I <span class="grad">WORK WITH</span></h2>
+        <p class="section-sub reveal">Self-rated confidence across the areas I actively use for coursework and projects.
+        </p>
+
+        <div class="skills-layout">
+          <!-- graph -->
+          <div class="card card-graph reveal">
+            <div class="head">
+              <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 3v18M3 12h18" />
+                </svg></div>
+              <h3>Skill Graph</h3>
+              <div class="legend">
+                <span class="lg lg-now"><i></i>Now</span>
+                <span class="lg lg-goal"><i></i>6-month target</span>
+              </div>
+            </div>
+            <div class="chart-box">
+              <svg id="radar" viewBox="-8 0 336 292" role="img" aria-labelledby="radarTitle">
+                <title id="radarTitle">Radar chart of self-rated skills: programming, web, data analysis, problem
+                  solving, database, communication</title>
+                <g class="rings"></g>
+                <g class="spokes"></g>
+                <g class="labels"></g>
+                <polygon class="poly poly-goal" points=""></polygon>
+                <polygon class="poly poly-now" points=""></polygon>
+                <g class="dots"></g>
+              </svg>
+            </div>
+            <div class="graph-foot">
+              <span>Hover a node for the exact level</span>
+              <span class="gf-avg">Average level <b>—</b></span>
+            </div>
+            <noscript>
+              <p class="dim small">Enable JavaScript to view the interactive graph. Current levels: Programming 70, Web
+                82, Data 65, Problem solving 75, DBMS 55, Communication 80.</p>
+            </noscript>
+          </div>
+
+          <!-- bars -->
+          <div class="card reveal">
+            <div class="head">
+              <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="12" rx="1" />
+                  <path d="M2 20h20" />
+                </svg></div>
+              <h3>Languages &amp; Tools</h3>
+            </div>
+            <ul class="bars">
+              <li><span class="b-name">C</span><span class="bar"><i style="--w:70%"></i></span><span
+                  class="b-val">70</span></li>
+              <li><span class="b-name">C++</span><span class="bar"><i style="--w:75%"></i></span><span
+                  class="b-val">75</span></li>
+              <li><span class="b-name">Python</span><span class="bar"><i style="--w:72%"></i></span><span
+                  class="b-val">72</span></li>
+              <li><span class="b-name">JavaScript</span><span class="bar"><i style="--w:82%"></i></span><span
+                  class="b-val">82</span></li>
+              <li><span class="b-name">HTML5 / CSS3</span><span class="bar"><i style="--w:88%"></i></span><span
+                  class="b-val">88</span></li>
+              <li><span class="b-name">My SQL</span><span class="bar"><i style="--w:88%"></i></span><span
+                  class="b-val">90</span></li>
+            </ul>
+            <div class="tools">
+              <span class="t-label">Also using</span>
+              <span class="pill">Git &amp; GitHub</span><span class="pill">VS Code</span>
+              <span class="pill">Excel</span><span class="pill">Figma</span> <span class="pill">MySql</span><span
+                class="pill">Pandas</span><span class="pill">Canvas</span><span class="pill">Linux</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card reveal">
+            <div class="head">
+              <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 8v4l3 2" />
+                </svg></div>
+              <h3>Core Skills</h3>
+            </div>
+            <div class="tags">
+              <span class="pill">Data Analysis</span><span class="pill">Problem Solving</span>
+              <span class="pill">Web Design</span><span class="pill">Project Management</span>
+              <span class="pill">Soft Skills</span><span class="pill">Teamwork &amp; Collaboration</span>
+              <span class="pill">Continuous Learning</span><span class="pill">Problem Decomposition</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="head">
+              <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6z" />
+                </svg></div>
+              <h3>Currently Learning</h3>
+            </div>
+            <div class="tags">
+              <span class="pill learning">Data Analysis</span><span class="pill learning">Data Structure and
+                Algorithms</span>
+              <span class="pill learning">Database Stysem</span><span class="pill learning">Foundations of
+                AI</span><span class="pill learning">Machine Learning</span><span class="pill learning">JavaScript
+                Advance levels</span>
+              <span class="pill learning">Data Modeling</span><span class="pill learning">Advance Programming</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="head">
+              <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg></div>
+              <h3>Clubs</h3>
+            </div>
+            <div class="club-item">
+              <h4>CSALML Development</h4>
+              <p>Computer Society of India chapter member.</p>
+            </div>
+            <div class="club-item">
+              <h4>Bitwise Club</h4>
+              <p>Active member — coding &amp; problem-solving.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PROJECTS ================= -->
+      <section class="projects" id="projects">
+        <p class="eyebrow reveal">03 — Projects</p>
+        <h2 class="reveal">THINGS I <span class="grad">BUILT</span></h2>
+
+        <div class="filters reveal" role="group" aria-label="Filter projects by type">
+          <button class="f-chip" data-cat="all" aria-pressed="true">All</button>
+          <button class="f-chip" data-cat="web" aria-pressed="false">Web apps</button>
+          <button class="f-chip" data-cat="data" aria-pressed="false">Data &amp; tools</button>
+          <button class="f-chip" data-cat="logic" aria-pressed="false">Logic</button>
+          <span class="count-note" id="projCount" role="status" aria-live="polite"></span>
+        </div>
+
+        <div class="proj-grid" id="projGrid">
+          <article class="proj reveal flip featured" data-cat="web">
+            <span class="ribbon" aria-hidden="true">Featured</span>
+            <div class="flip-inner">
+              <div class="face front">
+                <div class="proj-top">
+                  <h3>Vartalab</h3>
+                  <span class="lang"><i class="ldot ldot-js"></i>JavaScript</span>
+                </div>
+                <p>An English-learning platform prototype: grammar-first lessons, speaking/writing practice and a weekly
+                  IELTS-style contest arena with leaderboard — shipped as a single-page app.</p>
+                <div class="tags sm">
+                  <span class="pill">Vanilla JS</span><span class="pill">CSS Grid</span><span
+                    class="pill">localStorage</span>
+                </div>
+                <div class="proj-links">
+                  <a class="plink" href="https://tripathibharati303-ops.github.io/Vartalab/" target="_blank"
+                    rel="noopener noreferrer">Live demo
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 17 17 7M9 7h8v8" />
+                    </svg></a>
+                  <a class="plink ghost" href="https://github.com/tripathibharati303-ops/Vartalab" target="_blank"
+                    rel="noopener noreferrer">Source</a>
+                </div>
+              </div>
+              <div class="face back" aria-hidden="true">
+                <h4>Under the hood</h4>
+                <ul>
+                  <li>Single-file front-end prototype — HTML, CSS and vanilla JS, no framework</li>
+                  <li>Client-side JSON store in <code>localStorage</code> with an in-memory fallback</li>
+                  <li>Learn → practise → contest loop, with a timed arena and leaderboard</li>
+                  <li>Written/speaking feedback is simulated, ready to swap for a real API</li>
+                  <li>Labelled a practice contest — not an official IELTS examination</li>
+                </ul>
+              </div>
+            </div>
+            <button class="flip-btn" type="button" aria-expanded="false"><span class="lab-main">Details</span><span
+                class="lab-alt">Back</span></button>
+          </article>
+
+          <article class="proj reveal flip" data-cat="data">
+            <div class="flip-inner">
+              <div class="face front">
+                <div class="proj-top">
+                  <h3>NetMirror</h3>
+                  <span class="lang"><i class="ldot ldot-html"></i>HTML</span>
+                </div>
+                <p>A network-monitoring dashboard interface — real-time style panels built with plain HTML, CSS and
+                  JavaScript, focused on readable data layout.</p>
+                <div class="tags sm">
+                  <span class="pill">Dashboard</span><span class="pill">DOM APIs</span><span
+                    class="pill">Responsive</span>
+                </div>
+                <div class="proj-links">
+                  <a class="plink" href="https://tripathibharati303-ops.github.io/NetMirror/" target="_blank"
+                    rel="noopener noreferrer">Live demo
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 17 17 7M9 7h8v8" />
+                    </svg></a>
+                  <a class="plink ghost" href="https://github.com/tripathibharati303-ops/NetMirror" target="_blank"
+                    rel="noopener noreferrer">Source</a>
+                </div>
+              </div>
+              <div class="face back" aria-hidden="true">
+                <h4>Under the hood</h4>
+                <ul>
+                  <li>Dashboard layout built from plain HTML, CSS and JavaScript</li>
+                  <li>Panel-and-table structure aimed at readable live data</li>
+                  <li>Hosted on GitHub Pages</li>
+                </ul>
+              </div>
+            </div>
+            <button class="flip-btn" type="button" aria-expanded="false"><span class="lab-main">Details</span><span
+                class="lab-alt">Back</span></button>
+          </article>
+
+          <article class="proj reveal flip" data-cat="logic">
+            <div class="flip-inner">
+              <div class="face front">
+                <div class="proj-top">
+                  <h3>Rock · Paper · Scissors</h3>
+                  <span class="lang"><i class="ldot ldot-js"></i>JavaScript</span>
+                </div>
+                <p>A scorekeeping game with state handling, random computer opponent and instant UI feedback — built to
+                  practise clean DOM logic without any framework.</p>
+                <div class="tags sm">
+                  <span class="pill">Game logic</span><span class="pill">State</span><span class="pill">Events</span>
+                </div>
+                <div class="proj-links">
+                  <a class="plink" href="https://tripathibharati303-ops.github.io/Rock-Paper-Scissors/" target="_blank"
+                    rel="noopener noreferrer">Live demo
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 17 17 7M9 7h8v8" />
+                    </svg></a>
+                  <a class="plink ghost" href="https://github.com/tripathibharati303-ops/Rock-Paper-Scissors"
+                    target="_blank" rel="noopener noreferrer">Source</a>
+                </div>
+              </div>
+              <div class="face back" aria-hidden="true">
+                <h4>Under the hood</h4>
+                <ul>
+                  <li>Game state, random opponent and scorekeeping in vanilla JS</li>
+                  <li>DOM events only — no library, no build step</li>
+                  <li>Hosted on GitHub Pages</li>
+                </ul>
+              </div>
+            </div>
+            <button class="flip-btn" type="button" aria-expanded="false"><span class="lab-main">Details</span><span
+                class="lab-alt">Back</span></button>
+          </article>
+
+          <article class="proj reveal flip" data-cat="logic">
+            <div class="flip-inner">
+              <div class="face front">
+                <div class="proj-top">
+                  <h3>Calculator</h3>
+                  <span class="lang"><i class="ldot ldot-js"></i>JavaScript</span>
+                </div>
+                <p>Keyboard-friendly calculator with chained operations and input validation — a small project for
+                  practising edge-case handling.</p>
+                <div class="tags sm"><span class="pill">UI</span><span class="pill">Validation</span><span
+                    class="pill">A11y</span></div>
+                <div class="proj-links">
+                  <a class="plink" href="https://github.com/tripathibharati303-ops/Calculator" target="_blank"
+                    rel="noopener noreferrer">Repository
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 17 17 7M9 7h8v8" />
+                    </svg></a>
+                </div>
+              </div>
+              <div class="face back" aria-hidden="true">
+                <h4>Under the hood</h4>
+                <ul>
+                  <li>Chained operations with input validation</li>
+                  <li>Keyboard-friendly controls</li>
+                  <li>Source on GitHub</li>
+                </ul>
+              </div>
+            </div>
+            <button class="flip-btn" type="button" aria-expanded="false"><span class="lab-main">Details</span><span
+                class="lab-alt">Back</span></button>
+          </article>
+        </div>
+
+        <p class="more reveal"><a class="plink" href="https://github.com/tripathibharati303-ops?tab=repositories"
+            target="_blank" rel="noopener noreferrer">All 5 repositories on GitHub
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></a></p>
+      </section>
+
+      <!-- ================= JOURNEY ================= -->
+      <section class="journey" id="journey">
+        <p class="eyebrow reveal">04 — Journey</p>
+        <h2 class="reveal">ACADEMICS <span class="grad">&amp; TIMELINE</span></h2>
+
+        <ol class="timeline">
+           
+           <li class="reveal"><span class="tl-dot"></span><time>2026</time>
+            <h3>Shipped first web apps</h3>
+            <p>Published NetMirror, Rock-Paper-Scissors and Vartalab on GitHub Pages.</p>
+          </li>
+
+     
+
+          <li class="reveal"><span class="tl-dot"></span><time>2026</time>
+            <h3>Club member — CSI &amp; Bitwise</h3>
+            <p>Part of the Computer Society of India development circle and the Bitwise coding club.</p>
+          </li>
+
+          <li class="reveal"><span class="tl-dot"></span><time>2025 → now</time>
+            <h3>B.Tech CSE — JUET, Rewa</h3>
+            <p>Core coursework: data structures, DBMS, operating systems, plus self-driven web and data projects.</p>
+          </li>
+
+          <li class="reveal"><span class="tl-dot"></span><time>2025</time>
+            <h3>Class XII — 85%</h3>
+            <p>Higher secondary, Rewa, Madhya Pradesh.</p>
+          </li>
+          <li class="reveal"><span class="tl-dot"></span><time>2023</time>
+            <h3>Class X — 88%</h3>
+            <p>Secondary, Rewa, Madhya Pradesh.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ================= CONTACT ================= -->
+      <section class="contact" id="contact">
+        <div class="contact-head reveal">
+          <p class="eyebrow center">05 — Contact</p>
+          <h2>GET IN <span class="grad">TOUCH</span></h2>
+          <p>Open to internships, collaborations and conversations about data, web or code.</p>
+        </div>
+
+
+
+        <div class="contact-cards">
+          <a class="c-card reveal" href="https://tripathibharati303@gmail.com">
+            <div class="c-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg></div>
+            <div>
+              <div class="c-label">Email</div>
+              <div class="c-value">tripathibharati303@gmail.com</div>
+            </div>
+
+
+            <a class="c-card reveal" href="https://github.com/tripathibharati303-ops" target="_blank"
+              rel="noopener noreferrer">
+              <div class="c-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
+                </svg></div>
+              <div>
+                <div class="c-label">GitHub</div>
+                <div class="c-value">tripathibharati303-ops</div>
+              </div>
+            </a>
+            <a class="c-card reveal" href="https://www.linkedin.com/in/bharati-tripathi-a8a2a6375" target="_blank"
+              rel="noopener noreferrer">
+              <div class="c-icon"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                  <path
+                    d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                </svg></div>
+              <div>
+                <div class="c-label">LinkedIn</div>
+                <div class="c-value">bharati-tripathi</div>
+              </div>
+            </a>
+            <a class="c-card reveal" href="https://leetcode.com/TripathiBharati" target="_blank"
+              rel="noopener noreferrer">
+              <div class="c-icon"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+                  <path
+                    d="M13.48 22c-1.3 0-2.53-.5-3.44-1.42l-3.83-3.86A4.86 4.86 0 0 1 5 13.3c0-1.3.5-2.53 1.42-3.44l4.66-4.66a1.38 1.38 0 0 1 1.95 1.95L8.37 11.8a2.1 2.1 0 0 0 0 2.97l3.83 3.86a2.1 2.1 0 0 0 2.97 0l2.66-2.66a1.38 1.38 0 0 1 1.95 1.95l-2.66 2.66A4.86 4.86 0 0 1 13.48 22zm-1.7-7.75a1.38 1.38 0 0 1 0-1.95l4.7-4.7a1.38 1.38 0 1 1 1.95 1.95l-4.7 4.7a1.38 1.38 0 0 1-1.95 0zM9.9 3.42a1.38 1.38 0 0 1 1.95 0l1.28 1.28a1.38 1.38 0 1 1-1.95 1.95L9.9 5.37a1.38 1.38 0 0 1 0-1.95z" />
+                </svg></div>
+              <div>
+                <div class="c-label">LeetCode</div>
+                <div class="c-value">TripathiBharati</div>
+              </div>
+            </a>
+        </div>
+    </div>
+
+    </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span> <strong> </strong> </span>
+      <span class="foot-mid">Designed &amp; built by <strong>Bharati Tripathi</strong>© <span
+          id="year">2026</span></span>
+      <a href="#top" class="back-inline"> </a>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" id="toTop" aria-label="Scroll back to top">
+    <svg class="ring ring-bg" viewBox="0 0 44 44" aria-hidden="true">
+      <circle cx="22" cy="22" r="20.4" />
+    </svg>
+    <svg class="ring" viewBox="0 0 44 44" aria-hidden="true">
+      <circle cx="22" cy="22" r="20.4" id="ringArc" />
+    </svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      aria-hidden="true">
+      <line x1="12" y1="19" x2="12" y2="5" />
+      <polyline points="5 12 12 5 19 12" />
+    </svg>
+  </a>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="script.js" defer></script>
+  <script>(function () { function c() { var b = a.contentDocument || (a.contentWindow && a.contentWindow.document); if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'a4c952dc9c0d3fa8',t:'MTc5MjM0NTE3OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
